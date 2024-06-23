@@ -1,12 +1,12 @@
-import React from 'react'
-import Ex2 from './Ex2'
+import React from "react";
+import Ex2 from "./Ex2";
 
 const App = () => {
   return (
     <>
-    <Ex2/>
+      <Ex2 />
     </>
-  )
-}
+  );
+};
 
-export default App
+export default App;
