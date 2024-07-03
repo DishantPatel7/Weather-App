@@ -1,10 +1,98 @@
-# How to Install - Step by Step Guide
-### 1. Clone using the following repo link
-###  ` git clone https://github.com/DishantPatel7/Portfolio.git `
+# &lt;clipboard-copy&gt; element
 
-### 2. Go to the project folder and run npm install
-### ` cd Portfolio `
-### ` npm install `
+Copy element text content or input values to the clipboard.
 
-### 3. Now run your app
-### ` npm run dev `
+## Installation
+
+```
+$ npm install --save @github/clipboard-copy-element
+```
+
+## Usage
+
+### Script
+
+Import as ES modules:
+
+```js
+import '@github/clipboard-copy-element'
+```
+
+With a script tag:
+
+```html
+<script type="module" src="./node_modules/@github/clipboard-copy-element/dist/index.js">
+```
+
+### Markup
+
+```html
+<clipboard-copy for="blob-path" class="btn btn-sm BtnGroup-item">
+  Copy path
+</clipboard-copy>
+<div id="blob-path">src/index.js</div>
+```
+
+## Data sources
+
+### Attribute
+
+```html
+<clipboard-copy value="src/index.js">Copy</clipboard-copy>
+```
+
+### Element content
+
+```html
+<clipboard-copy for="blob-path">Copy</clipboard-copy>
+<div id="blob-path">src/index.js</div>
+```
+
+### Form input
+
+```html
+<clipboard-copy for="blob-path">Copy</clipboard-copy>
+<input id="blob-path" value="src/index.js">
+```
+
+### Hyperlink href
+
+```html
+<clipboard-copy for="blob-path">Copy full URL</clipboard-copy>
+<a id="blob-path" href="/path/to#my-blob">Link text will not be copied</a>
+```
+
+## Events
+
+After copying to the clipboard, a `clipboard-copy` event is dispatched from
+the `<clipboard-copy>` element:
+
+```js
+document.addEventListener('clipboard-copy', function(event) {
+  const button = event.target
+  button.classList.add('highlight')
+})
+```
+
+## Browser support
+
+Browsers without native [custom element support][support] require a [polyfill][].
+
+- Chrome
+- Firefox
+- Safari
+- Microsoft Edge
+
+[support]: https://caniuse.com/#feat=custom-elementsv1
+[polyfill]: https://github.com/webcomponents/polyfills/tree/master/packages/custom-elements
+
+## Development
+
+```
+npm install
+npm test
+```
+
+## License
+
+Distributed under the MIT license. See LICENSE for details.
