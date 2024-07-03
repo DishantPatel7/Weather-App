@@ -8,7 +8,9 @@ Copy element text content or input values to the clipboard.
 $ npm install --save @github/clipboard-copy-element
 ```
 
-## Usage
+```
+Usage
+```
 
 ### Script
 
